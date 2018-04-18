@@ -43,7 +43,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="../admin/category.jsp" class="<%=categoryactive%>">
+                    <a href="../admin/category_tab.jsp" class="<%=categoryactive%>">
                         <i class="lnr lnr-chart-bars"></i>
                         <span>分类列表</span>
                     </a>

@@ -7,6 +7,10 @@ public class Category {
 
     private Integer parentid;
 
+    private String des;
+
+    private Integer level;
+
     public Integer getId() {
         return id;
     }
@@ -29,5 +33,21 @@ public class Category {
 
     public void setParentid(Integer parentid) {
         this.parentid = parentid;
+    }
+
+    public String getDes() {
+        return des;
+    }
+
+    public void setDes(String des) {
+        this.des = des == null ? null : des.trim();
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
     }
 }

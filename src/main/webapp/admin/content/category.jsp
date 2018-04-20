@@ -132,7 +132,7 @@
                             <input type="text" class="form-control" name="des" id="recipient-des">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-des" class="control-label">父分类</label>
+                            <label for="recipient-parent" class="control-label">父分类</label>
                             <select class="form-control" name="parentid" id="recipient-parent">
                                 <option value="0">根目录</option>
                                 <% for (Category tempC : categories) {

@@ -9,14 +9,16 @@
 
 <%
     String activePage = pageContext.getAttribute("activePage").toString();
-    System.out.println(activePage.equals("home")?"active":"");
 
     String homeactive = activePage.equals("home")?"active":"";
     String categoryactive = activePage.equals("category")?"active":"";
+    String articleactive = activePage.equals("article")?"active":"";
 
     String userListactive = activePage.equals("userlist")?"active":"";
     String userpointactive = activePage.equals("userpoint")?"active":"";
     String user_active = ((userListactive.length()>0) || (userpointactive.length()>0))?"active":"collapsed";
+
+
 
 %>
 <!-- LEFT SIDEBAR -->
@@ -49,9 +51,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/panels.jsp" class="">
+                    <a href="../admin/article_tab.jsp" class="<%=articleactive%>">
                         <i class="lnr lnr-cog"></i>
-                        <span>Panels</span>
+                        <span>文章管理</span>
                     </a>
                 </li>
                 <li>

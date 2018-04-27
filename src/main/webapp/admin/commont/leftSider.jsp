@@ -13,6 +13,8 @@
     String homeactive = activePage.equals("home")?"active":"";
     String categoryactive = activePage.equals("category")?"active":"";
     String articleactive = activePage.equals("article")?"active":"";
+    String mcategoryactive = activePage.equals("mcategory")?"active":"";
+    String moviceactive = activePage.equals("movice")?"active":"";
 
     String userListactive = activePage.equals("userlist")?"active":"";
     String userpointactive = activePage.equals("userpoint")?"active":"";
@@ -47,7 +49,7 @@
                 <li>
                     <a href="../admin/category_tab.jsp" class="<%=categoryactive%>">
                         <i class="lnr lnr-chart-bars"></i>
-                        <span>分类列表</span>
+                        <span>文章分类列表</span>
                     </a>
                 </li>
                 <li>
@@ -57,41 +59,53 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/notifications.jsp" class="">
-                        <i class="lnr lnr-alarm"></i>
-                        <span>Notifications</span>
+                    <a href="../admin/mcategory_tab.jsp" class="<%=mcategoryactive%>">
+                        <i class="lnr lnr-chart-bars"></i>
+                        <span>电影分类列表</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#subPages" data-toggle="collapse" class="collapsed">
-                        <i class="lnr lnr-file-empty"></i>
-                        <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                    <div id="subPages" class="collapse ">
-                        <ul class="nav">
-                            <li><a href="../admin/page-profile.html" class="">Profile</a></li>
-                            <li><a href="../admin/page-login.html" class="">Login</a></li>
-                            <li><a href="../admin/page-lockscreen.html" class="">Lockscreen</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="../admin/tables.jsp" class="">
-                        <i class="lnr lnr-dice"></i>
-                        <span>Tables</span>
+                    <a href="../admin/movice_tab.jsp" class="<%=moviceactive%>">
+                        <i class="lnr lnr-cog"></i>
+                        <span>电影管理</span>
                     </a>
                 </li>
-                <li>
-                    <a href="../admin/typography.jsp" class="">
-                        <i class="lnr lnr-text-format"></i>
-                        <span>Typography</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="../admin/icons.jsp" class="">
-                        <i class="lnr lnr-linearicons"></i>
-                        <span>Icons</span>
-                    </a>
-                </li>
+                <%--<li>--%>
+                    <%--<a href="../admin/notifications.jsp" class="">--%>
+                        <%--<i class="lnr lnr-alarm"></i>--%>
+                        <%--<span>Notifications</span>--%>
+                    <%--</a>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                    <%--<a href="#subPages" data-toggle="collapse" class="collapsed">--%>
+                        <%--<i class="lnr lnr-file-empty"></i>--%>
+                        <%--<span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>--%>
+                    <%--<div id="subPages" class="collapse ">--%>
+                        <%--<ul class="nav">--%>
+                            <%--<li><a href="../admin/page-profile.html" class="">Profile</a></li>--%>
+                            <%--<li><a href="../admin/page-login.html" class="">Login</a></li>--%>
+                            <%--<li><a href="../admin/page-lockscreen.html" class="">Lockscreen</a></li>--%>
+                        <%--</ul>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                    <%--<a href="../admin/tables.jsp" class="">--%>
+                        <%--<i class="lnr lnr-dice"></i>--%>
+                        <%--<span>Tables</span>--%>
+                    <%--</a>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                    <%--<a href="../admin/typography.jsp" class="">--%>
+                        <%--<i class="lnr lnr-text-format"></i>--%>
+                        <%--<span>Typography</span>--%>
+                    <%--</a>--%>
+                <%--</li>--%>
+                <%--<li>--%>
+                    <%--<a href="../admin/icons.jsp" class="">--%>
+                        <%--<i class="lnr lnr-linearicons"></i>--%>
+                        <%--<span>Icons</span>--%>
+                    <%--</a>--%>
+                <%--</li>--%>
             </ul>
         </nav>
     </div>

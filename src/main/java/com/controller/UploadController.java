@@ -66,7 +66,7 @@ public class UploadController {
 
     private String saveImage(HttpServletRequest request, @RequestParam("file") MultipartFile file) throws IOException {
         //上传文件路径
-        String path = request.getServletContext().getRealPath("/images/");
+        String path = request.getSession().getServletContext().getRealPath("/images/");
         //上传文件名
         String fileName = file.getOriginalFilename();
         fileName = StringUtil.Random(32)+StringUtil.subSuffix(fileName);

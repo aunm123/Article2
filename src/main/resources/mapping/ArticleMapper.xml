@@ -1,199 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.ArticleMapper">
-  <resultMap id="BaseResultMap" type="com.entity.Article">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="header" jdbcType="VARCHAR" property="header" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="description" jdbcType="VARCHAR" property="description" />
-    <result column="is_published" jdbcType="INTEGER" property="isPublished" />
-    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
-    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
-    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="user_id" jdbcType="VARCHAR" property="userId" />
-    <result column="category_id" jdbcType="INTEGER" property="categoryId" />
-    <result column="icon" jdbcType="VARCHAR" property="icon" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.entity.Article">
-    <result column="content" jdbcType="LONGVARCHAR" property="content" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    id, header, name, description, is_published, is_delete, create_time, update_time, 
-    user_id, category_id, icon
+    <resultMap id="BaseResultMap" type="com.entity.Article">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="des" jdbcType="VARCHAR" property="des"/>
+        <result column="is_published" jdbcType="INTEGER" property="isPublished"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="category_id" jdbcType="INTEGER" property="categoryId"/>
+        <result column="icon" jdbcType="VARCHAR" property="icon"/>
+    </resultMap>
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.entity.Article">
+        <result column="content" jdbcType="LONGVARCHAR" property="content"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, name, des, is_published, is_delete, create_time, update_time, category_id, icon
   </sql>
-  <sql id="Blob_Column_List">
+    <sql id="Blob_Column_List">
     content
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from t_article
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="selectAll" resultMap="ResultMapWithBLOBs">
-    select * FROM t_article
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select
+        <include refid="Base_Column_List"/>
+        ,
+        <include refid="Blob_Column_List"/>
+        from t_article
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="ResultMapWithBLOBs">
+        select * FROM t_article
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_article
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.entity.Article">
-    insert into t_article (id, header, name, 
-      description, is_published, is_delete, 
-      create_time, update_time, user_id, 
-      category_id, icon, content
-      )
-    values (#{id,jdbcType=INTEGER}, #{header,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{description,jdbcType=VARCHAR}, #{isPublished,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{userId,jdbcType=VARCHAR}, 
-      #{categoryId,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR}
-      )
+    <insert id="insert" parameterType="com.entity.Article">
+    insert into t_article (id, name, des, 
+      is_published, is_delete, create_time, 
+      update_time, category_id, icon, 
+      content)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{des,jdbcType=VARCHAR}, 
+      #{isPublished,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{categoryId,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, 
+      #{content,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.entity.Article">
-    insert into t_article
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="header != null">
-        header,
-      </if>
-      <if test="name != null">
-        name,
-      </if>
-      <if test="description != null">
-        description,
-      </if>
-      <if test="isPublished != null">
-        is_published,
-      </if>
-      <if test="isDelete != null">
-        is_delete,
-      </if>
-      <if test="createTime != null">
-        create_time,
-      </if>
-      <if test="updateTime != null">
-        update_time,
-      </if>
-      <if test="userId != null">
-        user_id,
-      </if>
-      <if test="categoryId != null">
-        category_id,
-      </if>
-      <if test="icon != null">
-        icon,
-      </if>
-      <if test="content != null">
-        content,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="header != null">
-        #{header,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null">
-        #{description,jdbcType=VARCHAR},
-      </if>
-      <if test="isPublished != null">
-        #{isPublished,jdbcType=INTEGER},
-      </if>
-      <if test="isDelete != null">
-        #{isDelete,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="userId != null">
-        #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="categoryId != null">
-        #{categoryId,jdbcType=INTEGER},
-      </if>
-      <if test="icon != null">
-        #{icon,jdbcType=VARCHAR},
-      </if>
-      <if test="content != null">
-        #{content,jdbcType=LONGVARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.entity.Article">
+    <insert id="insertSelective" parameterType="com.entity.Article">
+        insert into t_article
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="des != null">
+                des,
+            </if>
+            <if test="isPublished != null">
+                is_published,
+            </if>
+            <if test="isDelete != null">
+                is_delete,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="categoryId != null">
+                category_id,
+            </if>
+            <if test="icon != null">
+                icon,
+            </if>
+            <if test="content != null">
+                content,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="des != null">
+                #{des,jdbcType=VARCHAR},
+            </if>
+            <if test="isPublished != null">
+                #{isPublished,jdbcType=INTEGER},
+            </if>
+            <if test="isDelete != null">
+                #{isDelete,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="categoryId != null">
+                #{categoryId,jdbcType=INTEGER},
+            </if>
+            <if test="icon != null">
+                #{icon,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                #{content,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.entity.Article">
+        update t_article
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="des != null">
+                des = #{des,jdbcType=VARCHAR},
+            </if>
+            <if test="isPublished != null">
+                is_published = #{isPublished,jdbcType=INTEGER},
+            </if>
+            <if test="isDelete != null">
+                is_delete = #{isDelete,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="categoryId != null">
+                category_id = #{categoryId,jdbcType=INTEGER},
+            </if>
+            <if test="icon != null">
+                icon = #{icon,jdbcType=VARCHAR},
+            </if>
+            <if test="content != null">
+                content = #{content,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.entity.Article">
     update t_article
-    <set>
-      <if test="header != null">
-        header = #{header,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="description != null">
-        description = #{description,jdbcType=VARCHAR},
-      </if>
-      <if test="isPublished != null">
-        is_published = #{isPublished,jdbcType=INTEGER},
-      </if>
-      <if test="isDelete != null">
-        is_delete = #{isDelete,jdbcType=INTEGER},
-      </if>
-      <if test="createTime != null">
-        create_time = #{createTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateTime != null">
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="userId != null">
-        user_id = #{userId,jdbcType=VARCHAR},
-      </if>
-      <if test="categoryId != null">
-        category_id = #{categoryId,jdbcType=INTEGER},
-      </if>
-      <if test="icon != null">
-        icon = #{icon,jdbcType=VARCHAR},
-      </if>
-      <if test="content != null">
-        content = #{content,jdbcType=LONGVARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.entity.Article">
-    update t_article
-    set header = #{header,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR},
+    set name = #{name,jdbcType=VARCHAR},
+      des = #{des,jdbcType=VARCHAR},
       is_published = #{isPublished,jdbcType=INTEGER},
       is_delete = #{isDelete,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      user_id = #{userId,jdbcType=VARCHAR},
       category_id = #{categoryId,jdbcType=INTEGER},
       icon = #{icon,jdbcType=VARCHAR},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.entity.Article">
+    <update id="updateByPrimaryKey" parameterType="com.entity.Article">
     update t_article
-    set header = #{header,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      description = #{description,jdbcType=VARCHAR},
+    set name = #{name,jdbcType=VARCHAR},
+      des = #{des,jdbcType=VARCHAR},
       is_published = #{isPublished,jdbcType=INTEGER},
       is_delete = #{isDelete,jdbcType=INTEGER},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      user_id = #{userId,jdbcType=VARCHAR},
       category_id = #{categoryId,jdbcType=INTEGER},
       icon = #{icon,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

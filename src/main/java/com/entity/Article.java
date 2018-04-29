@@ -5,11 +5,9 @@ import java.util.Date;
 public class Article {
     private Integer id;
 
-    private String header;
-
     private String name;
 
-    private String description;
+    private String des;
 
     private Integer isPublished;
 
@@ -18,8 +16,6 @@ public class Article {
     private Date createTime;
 
     private Date updateTime;
-
-    private String userId;
 
     private Integer categoryId;
 
@@ -35,14 +31,6 @@ public class Article {
         this.id = id;
     }
 
-    public String getHeader() {
-        return header;
-    }
-
-    public void setHeader(String header) {
-        this.header = header == null ? null : header.trim();
-    }
-
     public String getName() {
         return name;
     }
@@ -51,12 +39,12 @@ public class Article {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getDescription() {
-        return description;
+    public String getDes() {
+        return des;
     }
 
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
+    public void setDes(String des) {
+        this.des = des == null ? null : des.trim();
     }
 
     public Integer getIsPublished() {
@@ -89,14 +77,6 @@ public class Article {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId == null ? null : userId.trim();
     }
 
     public Integer getCategoryId() {

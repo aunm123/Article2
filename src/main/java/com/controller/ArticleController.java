@@ -35,7 +35,7 @@ public class ArticleController {
     @ResponseBody
     public Map<String,Object> listWithPage(
             Integer page,
-            @RequestParam(defaultValue = "5") Integer pageSize,
+            @RequestParam(defaultValue = "25") Integer pageSize,
             @RequestParam(defaultValue = "0") Integer categoryid
     ){
         PageInfo<Article> pageInfo = null;

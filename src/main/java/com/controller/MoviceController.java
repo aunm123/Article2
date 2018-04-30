@@ -30,7 +30,7 @@ public class MoviceController {
     @ResponseBody
     public Map<String,Object> listWithPage(
             Integer page,
-            @RequestParam(defaultValue = "5") Integer pageSize,
+            @RequestParam(defaultValue = "20") Integer pageSize,
             @RequestParam(defaultValue = "0") Integer mcategoryid
     ){
         PageInfo<Movice> pageInfo = null;

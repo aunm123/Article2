@@ -21,6 +21,8 @@ public class Article {
 
     private String icon;
 
+    private String tag;
+
     private String content;
 
     public Integer getId() {
@@ -93,6 +95,14 @@ public class Article {
 
     public void setIcon(String icon) {
         this.icon = icon == null ? null : icon.trim();
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag == null ? null : tag.trim();
     }
 
     public String getContent() {

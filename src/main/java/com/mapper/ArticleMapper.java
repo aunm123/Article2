@@ -1,13 +1,9 @@
 package com.mapper;
 
 import com.entity.Article;
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
-@Repository
 public interface ArticleMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -23,8 +19,7 @@ public interface ArticleMapper {
 
     int updateByPrimaryKey(Article record);
 
-    List<Article> selectWithCategoryid(Integer categoryid);
-
     List<Article> selectAll();
 
+    List<Article> selectWithCategoryid(Integer categoryid);
 }

@@ -15,9 +15,9 @@
 
     <script type="text/javascript" src="assets/wangEditor/wangEditor.js"></script>
 
-    <script type="text/javascript" src="assets/mypage/jqPaginator.min.js"></script>
-    <script type="text/javascript" src="assets/mypage/myPage.js"></script>
-    <link href="assets/mypage/myPage.css" rel="stylesheet">
+    <script type="text/javascript" src="assets/jqPaginator/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="assets/jqPaginator/myPage.js"></script>
+    <link href="assets/jqPaginator/myPage.css" rel="stylesheet">
 </head>
 
 <body>

@@ -21,6 +21,10 @@ public class Article {
 
     private String icon;
 
+    private Integer complain;
+
+    private Integer readed;
+
     private String content;
 
     public Integer getId() {
@@ -93,6 +97,22 @@ public class Article {
 
     public void setIcon(String icon) {
         this.icon = icon == null ? null : icon.trim();
+    }
+
+    public Integer getComplain() {
+        return complain;
+    }
+
+    public void setComplain(Integer complain) {
+        this.complain = complain;
+    }
+
+    public Integer getReaded() {
+        return readed;
+    }
+
+    public void setReaded(Integer readed) {
+        this.readed = readed;
     }
 
     public String getContent() {

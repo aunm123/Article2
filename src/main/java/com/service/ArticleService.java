@@ -55,4 +55,23 @@ public class ArticleService {
         articleMapper.insertSelective(category);
         return ;
     }
+
+    public List<Article> listWithAdvancePhoto(Integer count){
+        List<Article> articleList = articleMapper.selectAdvancePhoto(count);
+        return articleList;
+    }
+
+    public List<Article> listWithAdvanceText(Integer count){
+        List<Article> articleList = articleMapper.selectAdvanceText(count);
+        return articleList;
+    }
+
+    public List<Article> listWithComplain(Integer count){
+        List<Article> articleList = articleMapper.selectAllComplain(count);
+        return articleList;
+    }
+
+    public void hasRead(Integer id){
+        articleMapper.hasRead(id);
+    }
 }

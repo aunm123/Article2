@@ -1,13 +1,16 @@
 package com.mapper;
 
+import com.entity.Article;
 import com.entity.Movice;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Mapper
 @Repository
+@Mapper
 public interface MoviceMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -21,7 +24,15 @@ public interface MoviceMapper {
 
     int updateByPrimaryKey(Movice record);
 
+    List<Movice> selectWithCategoryid(Integer categoryid);
+
     List<Movice> selectAll();
 
-    List<Movice> selectWithCategoryid(Integer mcategoryid);
+    @Select("select * from `t_video` order by `readed` desc limit #{count} ")
+    List<Movice> selectAdvanceMovice(Integer count);
+
+    @Select("select * from `t_video` order by `complain` desc limit #{count} ")
+    List<Movice> selectAllComplain(Integer count);
+
+    int hasRead(Integer id);
 }

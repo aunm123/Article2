@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -45,6 +46,19 @@ public class MoviceController {
         resutlMap.put("counts",pageInfo.getTotal());
 
         return resutlMap;
+    }
+
+    @RequestMapping("listAdvance")
+    @ResponseBody
+    public List listAdvance(Integer count){
+        List<Movice> movices = moviceService.listWithAdvance(count);
+        return movices;
+    }
+    @RequestMapping("listComplain")
+    @ResponseBody
+    public List listComplain(Integer count){
+        List<Movice> movices = moviceService.listWithComplain(count);
+        return movices;
     }
 
     @RequestMapping("saveOrUpdate")

@@ -53,4 +53,19 @@ public class MoviceService {
         moviceMapper.insertSelective(movice);
         return ;
     }
+
+
+    public List<Movice> listWithAdvance(Integer count){
+        List<Movice> moviceList = moviceMapper.selectAdvanceMovice(count);
+        return moviceList;
+    }
+
+    public List<Movice> listWithComplain(Integer count){
+        List<Movice> moviceList = moviceMapper.selectAllComplain(count);
+        return moviceList;
+    }
+
+    public void hasRead(Integer id){
+        moviceMapper.hasRead(id);
+    }
 }

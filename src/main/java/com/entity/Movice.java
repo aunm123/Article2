@@ -17,6 +17,10 @@ public class Movice {
 
     private Integer mcategoryId;
 
+    private Integer complain;
+
+    private Integer readed;
+
     public Integer getId() {
         return id;
     }
@@ -71,5 +75,21 @@ public class Movice {
 
     public void setMcategoryId(Integer mcategoryId) {
         this.mcategoryId = mcategoryId;
+    }
+
+    public Integer getComplain() {
+        return complain;
+    }
+
+    public void setComplain(Integer complain) {
+        this.complain = complain;
+    }
+
+    public Integer getReaded() {
+        return readed;
+    }
+
+    public void setReaded(Integer readed) {
+        this.readed = readed;
     }
 }

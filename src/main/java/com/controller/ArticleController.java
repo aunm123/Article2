@@ -52,6 +52,27 @@ public class ArticleController {
         return resutlMap;
     }
 
+    @RequestMapping("listAdvancePhoto")
+    @ResponseBody
+    public List listAdvancePhoto(Integer count){
+        List<Article> articles = articleService.listWithAdvancePhoto(count);
+        return articles;
+    }
+
+    @RequestMapping("listAdvanceText")
+    @ResponseBody
+    public List listAdvanceText(Integer count){
+        List<Article> articles = articleService.listWithAdvanceText(count);
+        return articles;
+    }
+
+    @RequestMapping("listComplain")
+    @ResponseBody
+    public List listComplain(Integer count){
+        List<Article> articles = articleService.listWithComplain(count);
+        return articles;
+    }
+
     @RequestMapping("saveOrUpdate")
     public String saveOrUpdate(Article article,@RequestParam(defaultValue = "0") Integer cid){
         if (article.getId()==null){
@@ -69,4 +90,5 @@ public class ArticleController {
         articleService.deleteByid(articleid);
         return "success";
     }
+
 }

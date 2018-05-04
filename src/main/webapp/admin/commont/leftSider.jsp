@@ -5,6 +5,7 @@
   Time: 下午10:20
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
@@ -41,31 +42,31 @@
                     </a>
                     <div id="user-col" class="collapse <%=(user_active.equals("active")?"in":"")%>">
                         <ul class="nav">
-                            <li><a href="../admin/userList_tab.jsp" class="<%=userListactive%>">用户列表</a></li>
-                            <li><a href="../admin/userpoint_tab.jsp" class="<%=userpointactive%>">用户权限管理</a></li>
+                            <li><a href="/admin/userList_tab.jsp" class="<%=userListactive%>">用户列表</a></li>
+                            <li><a href="/admin/userpoint_tab.jsp" class="<%=userpointactive%>">用户权限管理</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="../admin/category_tab.jsp" class="<%=categoryactive%>">
+                    <a href="/admin/category_tab.jsp" class="<%=categoryactive%>">
                         <i class="lnr lnr-chart-bars"></i>
                         <span>文章分类列表</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/article_tab.jsp" class="<%=articleactive%>">
+                    <a href="/admin/article_tab.jsp" class="<%=articleactive%>">
                         <i class="lnr lnr-cog"></i>
                         <span>文章管理</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/mcategory_tab.jsp" class="<%=mcategoryactive%>">
+                    <a href="/admin/mcategory_tab.jsp" class="<%=mcategoryactive%>">
                         <i class="lnr lnr-chart-bars"></i>
                         <span>电影分类列表</span>
                     </a>
                 </li>
                 <li>
-                    <a href="../admin/movice_tab.jsp" class="<%=moviceactive%>">
+                    <a href="/admin/movice_tab.jsp" class="<%=moviceactive%>">
                         <i class="lnr lnr-cog"></i>
                         <span>电影管理</span>
                     </a>
@@ -83,7 +84,7 @@
                     <%--<div id="subPages" class="collapse ">--%>
                         <%--<ul class="nav">--%>
                             <%--<li><a href="../admin/page-profile.html" class="">Profile</a></li>--%>
-                            <%--<li><a href="../admin/page-login.html" class="">Login</a></li>--%>
+                            <%--<li><a href="../admin/login.jsp" class="">Login</a></li>--%>
                             <%--<li><a href="../admin/page-lockscreen.html" class="">Lockscreen</a></li>--%>
                         <%--</ul>--%>
                     <%--</div>--%>

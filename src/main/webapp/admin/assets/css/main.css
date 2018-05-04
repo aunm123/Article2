@@ -998,15 +998,6 @@ ul.activity-list > li {
     height: 100%;
     padding: 0 30px;
     text-align: center; }
-    .auth-box .left:before {
-      display: inline-block;
-      vertical-align: middle;
-      *vertical-align: auto;
-      *zoom: 1;
-      *display: inline;
-      content: ' ';
-      vertical-align: middle;
-      height: 100%; }
   .auth-box .right {
     float: right;
     width: 58%;
@@ -1746,6 +1737,13 @@ ul.activity-timeline > li {
 .project-table .progress {
   margin-bottom: 0; }
 
+
+.left-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .project-table .progress-bar {
   font-size: 10px; }
 
@@ -1754,5 +1752,4 @@ ul.activity-timeline > li {
   .project-table > tbody > tr > td .avatar {
     width: 22px;
     border: 1px solid #CCC; }
-
 /*# sourceMappingURL=main.css.map */

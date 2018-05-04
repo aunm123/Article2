@@ -23,7 +23,7 @@
         $("#recipient-icon").upload();
         var E = window.wangEditor;
         editor = new E('#recipient-content');
-        editor.customConfig.uploadImgServer = '/file/upload';
+        editor.customConfig.uploadImgServer = 'file/upload';
         editor.customConfig.uploadFileName = 'file';
         editor.customConfig.uploadImgHooks = {
             customInsert: function (insertImg, result, editor) {

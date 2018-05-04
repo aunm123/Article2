@@ -7,11 +7,9 @@ import com.service.MoviceService;
 import com.service.UserService;
 import com.util.EmptyUtil;
 import com.util.MapResponse;
-import jdk.nashorn.internal.objects.Global;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;

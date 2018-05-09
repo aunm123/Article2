@@ -64,6 +64,7 @@
 
     function showEditModel(cid) {
         cleanEditForm();
+        var hostname = "http://"+location.hostname+"/";
         $.ajax({
             url: "/article/find",
             data: {articleid: cid},

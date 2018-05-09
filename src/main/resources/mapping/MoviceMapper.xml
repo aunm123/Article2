@@ -153,4 +153,8 @@
     UPDATE `t_video` SET `readed`= readed + 1
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <update id="complainMovice" parameterType="java.lang.Integer">
+    UPDATE `t_video` SET `complain`= complain + 1
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>

@@ -57,6 +57,11 @@
                                 <input type="password" class="form-control" id="signin-password"
                                        value="" name="userpassword" placeholder="密码">
                             </div>
+                            <div class="form-group">
+                                <label for="signin-google" class="control-label sr-only">谷歌验证码</label>
+                                <input type="text" class="form-control" id="signin-google"
+                                       value="" name="googlecode" placeholder="谷歌验证码">
+                            </div>
                             <%--<div class="form-group clearfix">--%>
                                 <%--<label class="fancy-checkbox element-left">--%>
                                     <%--<input type="checkbox">--%>

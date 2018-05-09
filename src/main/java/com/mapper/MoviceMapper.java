@@ -35,4 +35,6 @@ public interface MoviceMapper {
     List<Movice> selectAllComplain(Integer count);
 
     int hasRead(Integer id);
+
+    int complainMovice(Integer id);
 }

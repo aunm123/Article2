@@ -31,4 +31,11 @@ public class CountController {
         return "success";
     }
 
+    @RequestMapping("complainMovice")
+    @ResponseBody
+    public String complainMovice(Integer moviceid){
+        moviceService.complainMovice(moviceid);
+        return "success";
+    }
+
 }

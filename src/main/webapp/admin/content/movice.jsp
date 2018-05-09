@@ -47,6 +47,7 @@
 
     function showEditModel(cid) {
         cleanEditForm();
+        var hostname = "http://"+location.hostname+"/";
         $.ajax({
             url: "/movice/find",
             data: {moviceid: cid},
@@ -58,7 +59,7 @@
                 var tempStr = '#recipient-categoryId option[value=' + movice.mcategoryId + ']';
                 $(tempStr)[0].selected = true;
                 $('#myModal').modal({});
-                $('.upload.one .item.success').attr("style", "background-image: url(" + movice.icon + ");")
+                $('.upload.one .item.success').attr("style", "background-image: url(" + hostname + movice.icon + ");")
                 $('input[name=icon]').val(movice.icon);
             }
         })

@@ -32,7 +32,9 @@ $(function () {
 
 function getTableRow(item,cateName) {
 
-    let icon = item.icon === null? "":`<img style="height: 120px;" src="${item.icon}"/>`;
+    var hostname = "http://"+location.hostname;
+    if(/^http/.test(item.icon)) {hostname = "";}
+    let icon = item.icon === null? "":`<img style="height: 120px;" src="${hostname}${item.icon}"/>`;
 
     let tableRow = `<tr class="">
                             <td>${item.id}</td>
@@ -55,7 +57,9 @@ function getTableRow(item,cateName) {
 
 function getMoviceTableRow(item,cateName) {
 
-    let icon = item.icon === null? "":`<img style="height: 120px;" src="${item.icon}"/>`;
+    var hostname = "http://"+location.hostname;
+    if(/^http/.test(item.icon)) {hostname = "";}
+    let icon = item.icon === null? "":`<img style="height: 120px;" src="${hostname}${item.icon}"/>`;
 
     let tableRow = `<tr class="">
                             <td>${item.id}</td>

@@ -68,4 +68,8 @@ public class MoviceService {
     public void hasRead(Integer id){
         moviceMapper.hasRead(id);
     }
+
+    public void complainMovice(Integer id){
+        moviceMapper.complainMovice(id);
+    }
 }

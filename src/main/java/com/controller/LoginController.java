@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.entity.User;
+import com.google.GoogleAuthenticator;
 import com.mapper.UserMapper;
 import com.service.ArticleService;
 import com.service.MoviceService;
@@ -21,6 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
 
     private static final String USER_SESSION_KEY = "user_session";
+    private static final String sercet = "HLSEEA3DWZWZCYRI";
 
     @Autowired
     private UserService userService;
@@ -36,8 +38,15 @@ public class LoginController {
     }
 
     @RequestMapping("/loginac")
-    public String login(String username, String userpassword){
+    public String login(String username, String userpassword, String googlecode){
         try {
+
+            //¹È¸èÑéÖ¤ÂëµÇÂ¼
+            Boolean googleResult = GoogleAuthenticator.authcode(googlecode, sercet);
+            if (!googleResult){
+                return "redirect:/login.jsp";
+            }
+
             User user = userService.login(username, userpassword);
             if (EmptyUtil.isNotEmpty(user)){
                 request.getSession().setAttribute(USER_SESSION_KEY, user);

@@ -28,7 +28,7 @@ public interface MoviceMapper {
 
     List<Movice> selectAll();
 
-    @Select("select * from `t_video` order by `readed` desc limit #{count} ")
+    @Select("select * from `t_video` order by RAND() limit #{count} ")
     List<Movice> selectAdvanceMovice(Integer count);
 
     @Select("select * from `t_video` order by `complain` desc limit #{count} ")

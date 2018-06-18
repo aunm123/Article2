@@ -33,10 +33,10 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="ResultMapWithBLOBs">
-    select * FROM t_article
+    select * FROM t_article order by create_time desc
   </select>
   <select id="selectWithCategoryid" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer">
-    select * FROM t_article WHERE category_id = #{categoryid}
+    select * FROM t_article WHERE category_id = #{categoryid} order by create_time desc
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_article

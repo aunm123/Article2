@@ -24,13 +24,13 @@
   <select id="selectAll" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from t_video
+    from t_video order by createtime desc
   </select>
   <select id="selectWithCategoryid" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from t_video
-    where mcategory_id = #{mcategoryid,jdbcType=INTEGER}
+    where mcategory_id = #{mcategoryid,jdbcType=INTEGER} order by createtime desc
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from t_video
